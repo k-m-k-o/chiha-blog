@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
+//= require jquery
 //= require activestorage
+//= require materialize
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});

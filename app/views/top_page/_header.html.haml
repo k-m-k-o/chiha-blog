@@ -1,5 +1,23 @@
 %header
-  .header-container
-    .header-container__left  タイトル（予定）
-    .header-container__center  タイトル（中心）
-    .header-container__right  メニュー（予定）
+  %nav
+    .header-container.nav-wrapper
+      .header-container__left.brand-logo  タイトル（予定）
+      %ul.nav-mobile.header-container__right
+        %li
+          %ul.header-container__right__category.collapsible
+            %li
+              .collapsible-header 
+                %p.header-container__right__category__menu
+                  Categories
+              .collapsible-body
+                %ul
+                  %li 
+                    %a All Categories
+                  %li 
+                    %a Tech
+                  %li 
+                    %a Audio
+                  %li 
+                    %a Fishing
+                  %li 
+                    %a Others

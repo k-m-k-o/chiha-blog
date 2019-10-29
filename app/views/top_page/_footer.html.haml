@@ -1,4 +1,41 @@
 %footer
   .footer-container
-    .footer-left フッター右
-    .footer-right フッター左
+    .footer-right
+      .footer-right__content
+        .footer-right__title.footer-title Infomation
+        .footer-right__info
+          .footer-right__info--text
+            当ブログは私ことChihaがRailsにて開発したポートフォリオ兼ブログアプリとなっています。
+            %br
+            ゆるく更新します。
+            %br
+            %br
+            連絡は
+            %a.inline-text{href: "https://twitter.com/chiha66337409"} twitter(@chiha66337409)
+            まで。
+            %br
+            制作物については
+            %a.inline-text{href: "https://github.com/chiha-24"} Github
+            に全て公開。
+    .footer-left
+      .footer-left__title.footer-title Profile
+      .footer-left__content
+        .footer-left__profile
+          %p.footer-left__profile__name Chiha
+          %p.footer-left__profile__text 
+            22歳。エンジニア見習い。
+            %br
+            生物系の大学を卒業後、某スクールに通いプログラミングを学習。
+            %br
+            釣り、ポータブルオーディオが趣味。
+        .footer-left__image
+          = image_tag "profile.jpg",class: "profile-image"
+      .footer-left__icons
+        .footer-left__icons__twitter
+          = link_to "https://twitter.com/chiha66337409" ,class: "twitter-icon" do
+            %i.fab.fa-twitter-square
+        .footer-left__icons__github
+          = link_to "https://github.com/chiha-24" ,class: "github-icon" do
+            %i.fab.fa-github-square
+  .footer-bottom
+    %p.footer-bottom__copyright ©️Copyright 2019 Chiha.

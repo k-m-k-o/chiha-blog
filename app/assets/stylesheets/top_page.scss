@@ -1,32 +1,273 @@
 // Place all the styles related to the top_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 header{
   height: 80px;
   width: 100vw; 
   display: flex;
-  
 }
+
+// 文章挿入aタグ用
+.inline-text{
+  color: #555;
+  border-bottom: solid #555 0.3px;
+  margin: 0 -3px;
+}
+
+//materializeのテンプレート相殺用
+
+nav{
+  background: none;
+  border:none;
+  box-shadow: none;
+  height: 80px;
+  color: #333333;
+}
+
+nav .brand-logo{
+  color: #333333;
+}
+
 .header-container{
-  display: flex;
-  justify-content: space-between;
   padding: 0 40px;
   width: 100%;
   line-height: 80px;
-  &__left,&__right,&__center{
+
+  &__left{
     display: inline-block;
   }
+
+  &__right{
+    display: inline-block;
+    float: right;
+
+    &__category{
+      box-shadow: 0px transparent;
+
+      &__menu{
+        width: 100%;
+        right: 0;
+      }
+    }
+  }
 }
+
+nav{
+  border-bottom: 0.5px #c2c2c2 solid;
+}
+
 .main-container{
-  height: calc(100vh - 80px);
-  background-color: azure;
+
 }
+
 footer{
   height: 300px;
 }
-.footer-container{
-  display: flex;
-  justify-content: space-between;
+
+
+
+
+
+.main-title{
+  height: 500px;
+  
+}
+
+.top-posts{
+  height: 230px;
+  background-color: rgb(236, 217, 191);
+}
+
+.collapsible,.collapsible-header{
+  box-shadow: none;
+  border: none;
+}
+
+.collapsible{
+  height: 100%;
+  padding: none;
+  margin: 0;
+}
+
+.collapsible-header{
+  height: 100%;
+  line-height: 78px; 
+  padding: 0;
+  text-align: right;
+}
+
+.collapsible-body{
+  padding: 0;
+}
+
+.collapsible-body ul li{
+  display: inline-block;
   padding: 0 40px;
-  line-height: 300px;
+}
+
+.collapsible-body ul li a{
+  color: #333333;
+} 
+
+nav ul li.active {
+  background-color: rgba(0, 0, 0, 0.01);
+  border: none;
+}
+
+.twitter-icon{
+  color: #2680f5; 
+}
+
+.github-icon{
+  color: #333333;
+}
+
+.footer-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: 0.5px #c2c2c2 solid;
+  padding-bottom: 10px;
+  margin: 0 auto 20px auto;
+  width: 95%;
+}
+
+.footer-left{
+  padding-top: 50px;
+  margin-bottom: 50px;
+  width: 60%;
+
+  &__icons{
+    display: flex; 
+    font-size: 40px;
+    padding-left: 30px; 
+    margin-top: -18px;
+
+    &__twitter{
+      padding: 0 10px;
+    }
+
+    &__github{
+      padding:0 10px;
+    }
+  }
+
+  &__content{
+    display: flex;
+  }
+
+  &__profile{
+    padding: 0 30px;
+
+    &__name{
+      font-weight: bold;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+  }
+}
+
+
+
+.footer-right{
+  padding-top: 50px;
+  width: 40%;
+  margin-bottom: 50px;
+
+  &__info{
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 750px){
+  .footer-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 871px){
+  .footer-left__icons{
+    margin-top: -50px;
+  }
+}
+@media screen and (max-width: 750px){
+  .collapsible-body ul li {
+    padding: 0 40px;
+    display: block;
+    float: unset;
+  }
+
+  .footer-container{
+    display: block!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+  }
+
+  .footer-right{
+    width: 100%;
+    display: block;
+    padding: 0 40px;
+    padding-top: 50px;
+  }
+
+  .footer-left{
+    width: 100%;
+    display: block;
+    padding: 0 40px;
+    padding-top: 50px;
+    &__icons{
+      margin-top: -30px;
+    }
+  }
+}
+@media screen and (max-width: 500px){
+
+  nav .brand-logo,nav .header-container__left{
+    font-size: 25px;
+    text-align: left;
+    left: 35%;
+  }
+
+  .footer-left{
+    position: relative;
+    &__content{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    &__icons{
+      position: absolute;
+      right: 80px;
+      top: 250px; 
+    }
+  }
+
+}
+@media screen and (max-width: 410px){
+
+  .footer-left__icons{
+    position: unset;
+    margin-top: 0px;
+  }
+}
+.profile-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  margin: 15px;
+}
+
+.footer-bottom{
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  background-color: rgba(45, 47, 83, 0.4);
+  border-top: solid #e0e0e0 0.3px;;
+
+  &__copyright{
+    color: rgb(250, 250, 250); 
+    text-align: center;
+  }
 }
