@@ -1,2 +1,25 @@
-.main-title なんかいい感じの文字
-.top-posts 投稿を適当にCarouselでも使って表示
+.top-contents-wrapper
+  .top-info-text products
+.top-posts 
+  .carousel
+    %a.carousel-item
+      .top-products
+        = image_tag "fr.png",class: "top-products__image"
+        .top-products__title 
+          釣り情報投稿、検索アプリ
+          %br
+          「FishingRecords」
+    %a.carousel-item
+      .top-products
+        = image_tag "cs.png",class: "top-products__image"
+        .top-products__title
+          グループチャットアプリ
+          %br
+          「ChatSpace」
+    %a.carousel-item
+      .top-products
+        = image_tag "mr.png",class: "top-products__image"
+        .top-products__title
+          フリマアプリのクローン
+          %br
+          「freemarket_sample_58」

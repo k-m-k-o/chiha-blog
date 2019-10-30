@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a{
+  color: #333333;
+}
+@font-face {
+  font-family: 'SkipStd';
+  src: font-url('FOT-SkipStd-D.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 header{
   height: 80px;
   width: 100vw; 
@@ -15,10 +25,14 @@ header{
   margin: 0 -3px;
 }
 
+body{
+  font-family: 'Times New Roman';
+}
 //materializeのテンプレート相殺用
 
 nav{
   background: none;
+  background: transparent;
   border:none;
   box-shadow: none;
   height: 80px;
@@ -27,6 +41,11 @@ nav{
 
 nav .brand-logo{
   color: #333333;
+  font-weight: bolder;
+}
+
+.collapsible,.collapsible-body,.collapsible-header{
+  background: none;
 }
 
 .header-container{
@@ -65,18 +84,16 @@ footer{
   height: 300px;
 }
 
-
-
-
-
-.main-title{
+.top-contents-wrapper{
   height: 500px;
-  
+  border-bottom: 0.5px #c2c2c2 solid;
+  margin: 0 60px;
 }
 
 .top-posts{
-  height: 230px;
-  background-color: rgb(236, 217, 191);
+  height: 300px;
+  border-bottom: 0.5px #c2c2c2 solid;
+  margin: 0 60px;
 }
 
 .collapsible,.collapsible-header{
@@ -88,6 +105,7 @@ footer{
   height: 100%;
   padding: none;
   margin: 0;
+  font-size: 18px;
 }
 
 .collapsible-header{
@@ -104,6 +122,7 @@ footer{
 .collapsible-body ul li{
   display: inline-block;
   padding: 0 40px;
+  font-size: 18px; 
 }
 
 .collapsible-body ul li a{
@@ -169,7 +188,22 @@ nav ul li.active {
 }
 
 
+.top-products{
+  width: 100%;
 
+  &__image{
+    height: 150px;
+    width: 250px;
+    margin-left: -20px; 
+  }
+}
+.carousel{
+  height: 300px;
+}
+.carousel .active{
+  height: 300px;
+  width: 300px;
+}
 .footer-right{
   padding-top: 50px;
   width: 40%;
@@ -179,6 +213,7 @@ nav ul li.active {
     padding: 0 30px;
   }
 }
+
 
 @media screen and (min-width: 750px){
   .footer-container{
@@ -223,6 +258,24 @@ nav ul li.active {
     }
   }
 }
+@media screen and (min-width: 1500px){
+  .footer-left__content{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+  .footer-left__image{
+    margin-right: 30px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .footer-left__icons{
+    padding-left: 100px;
+    margin-top: -80px;
+  }
+
+}
 @media screen and (max-width: 500px){
 
   nav .brand-logo,nav .header-container__left{
@@ -233,15 +286,43 @@ nav ul li.active {
 
   .footer-left{
     position: relative;
+    padding: unset;
+
     &__content{
       display: flex;
       flex-direction: column-reverse;
     }
+
     &__icons{
       position: absolute;
       right: 80px;
       top: 250px; 
     }
+  }
+
+  .footer-right{
+    padding: unset;
+  }
+  
+  .top-contents-wrapper, .top-posts{
+    margin: unset;
+    border-bottom: unset;
+  }
+  
+  .top-products{
+    padding: unset;
+    margin: unset;
+
+    &__title{
+      padding: unset;
+      margin: unset;
+    }
+  }
+
+  .footer-title{
+    padding: unset;
+    width: 100%;
+    margin-top: 30px;
   }
 
 }
@@ -271,3 +352,4 @@ nav ul li.active {
     text-align: center;
   }
 }
+
