@@ -1,25 +1,75 @@
 .top-contents-wrapper
   .top-info-text products
+.current-article
+  .footer-title Current Articles
+  .articles-container.slick.center
+    = link_to "#" do
+      .article-container
+        .article-container__left
+          .article-container__image 
+            = image_tag "profile.jpg",class: "article-container__image--image"
+        .article-container__right
+          .article-container__title タイトル１
+          .article-container__info
+            .article-container__date 2019/10/31
+            .article-container__category tech
+    = link_to "#" do
+      .article-container
+        .article-container__left
+          .article-container__image 
+            = image_tag "profile.jpg",class: "article-container__image--image"
+        .article-container__right
+          .article-container__title タイトル２
+          .article-container__info
+            .article-container__date 2019/10/31
+            .article-container__category tech
+    = link_to "#" do
+      .article-container
+        .article-container__left
+          .article-container__image 
+            = image_tag "profile.jpg",class: "article-container__image--image"
+        .article-container__right
+          .article-container__title タイトル３
+          .article-container__info
+            .article-container__date 2019/10/31
+            .article-container__category tech
 .top-posts 
-  .carousel
-    %a.carousel-item
-      .top-products
-        = image_tag "fr.png",class: "top-products__image"
-        .top-products__title 
-          釣り情報投稿、検索アプリ
-          %br
-          「FishingRecords」
-    %a.carousel-item
-      .top-products
-        = image_tag "cs.png",class: "top-products__image"
-        .top-products__title
-          グループチャットアプリ
-          %br
-          「ChatSpace」
-    %a.carousel-item
-      .top-products
-        = image_tag "mr.png",class: "top-products__image"
-        .top-products__title
-          フリマアプリのクローン
-          %br
-          「freemarket_sample_58」
+  .footer-title Application
+  .products-container
+    .carousel
+      %a.carousel-item
+        .top-products
+          = image_tag "fr.png",class: "top-products__image"
+          .top-products__title 
+            「FishingRecords」
+            %br
+            釣り情報投稿、検索アプリ
+      %a.carousel-item
+        .top-products
+          = image_tag "cs.png",class: "top-products__image"
+          .top-products__title
+            「ChatSpace」
+            %br
+            グループチャットアプリ
+      %a.carousel-item
+        .top-products
+          = image_tag "mr.png",class: "top-products__image"
+          .top-products__title
+            「freemarket_sample_58a」
+            %br
+            フリマアプリのクローン
+    .products-text
+      %p.products-tect__body
+        「FishingRecords」
+        %br
+        魚釣りの釣果・釣り場の投稿、検索、ユーザー登録ができる釣り情報共有サイト。
+        %br 
+        %br
+        「ChatSpace」
+        %br
+        スクールのカリキュラム中で作成。チャットグループの作成・編集、ユーザー登録ができるグループチャットアプリ。
+        %br
+        %br
+        「freemarket_sample_58a」
+        %br
+        スクールのカリキュラム中で作成。某フリマアプリのコピーサイト。
