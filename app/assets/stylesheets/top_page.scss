@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .main-container{
   position: relative;
+  padding-bottom: 402px;
   z-index:1;
 }
 
@@ -34,6 +35,14 @@ header{
 
 body{
   font-family: 'Times New Roman';
+  position: relative;
+  min-height: 100vh;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
 }
 //materializeのテンプレート相殺用
 
@@ -231,7 +240,7 @@ nav ul li.active {
   color: #333333;
 }
 
-.footer-title{
+.title-option{
   text-align: center;
   font-weight: bold;
   font-size: 30px;
@@ -349,6 +358,9 @@ nav ul li.active {
 }
 @media screen and (max-width: 750px){
 
+  .main-container{
+    padding-bottom: 740px;
+  }
   .header-container__right__category__menu{
     font-size: 20px;
   }
@@ -490,7 +502,7 @@ nav ul li.active {
     }
   }
 
-  .footer-title{
+  .title-option{
     padding: unset;
     width: 100%;
     margin-top: 30px;
