@@ -1,0 +1,536 @@
+// Place all the styles related to the top_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container{
+  position: relative;
+  z-index:1;
+}
+
+
+a{
+  color: #333333;
+}
+@font-face {
+  font-family: 'SkipStd';
+  src: font-url('FOT-SkipStd-D.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header{
+  height: 80px;
+  width: 100vw; 
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+// 文章挿入aタグ用
+.inline-text{
+  color: #555;
+  border-bottom: solid #555 0.3px;
+  margin: 0 -3px;
+}
+
+body{
+  font-family: 'Times New Roman';
+}
+//materializeのテンプレート相殺用
+
+nav{
+  background: none;
+  background: transparent;
+  border:none;
+  box-shadow: none;
+  height: 80px;
+  color: #333333;
+}
+
+nav .brand-logo{
+  color: #333333;
+  font-weight: bolder;
+}
+
+.collapsible,.collapsible-body,.collapsible-header{
+  background: none;
+}
+
+.header-container{
+  width: 100%;
+  line-height: 80px;
+
+  &__left{
+    display: inline-block;
+  }
+
+  &__right{
+    display: inline-block;
+    float: right;
+
+    &__category{
+      box-shadow: 0px transparent;
+
+      &__menu{
+        width: 100%;
+        right: 0;
+        padding: 0 15px;
+        font-size: 27px;
+      }
+    }
+  }
+}
+
+nav{
+  border-bottom: 0.5px #c2c2c2 solid;
+}
+
+.top-contents-wrapper{
+  height: 400px;
+  background-image: url("fukuoka.JPG");
+  background-size: cover;
+  background-position: center;
+  &__opacity{
+    background: rgba(255,255,255,0.4);
+    width: 100%;
+    height: 100%;
+  }
+
+  .top-contents__text-container{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'arial black';
+    padding: 120px 40px 0 40px;
+    text-shadow: 1px 1px rgb(186, 186, 186);
+
+    &__title{
+      font-size: 50px;
+      font-weight: bold;
+    }
+    &__text{
+      padding-top: 20px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+}
+
+.products-container{
+  display: flex; 
+}
+
+.products-text{
+  padding: 40px; 
+}
+
+.current-article{
+  margin: 0 60px;
+  margin-top: 40px;
+}
+
+.articles-container{
+  display: flex;
+  width: 100%;
+}
+
+.slick-track a{
+  width: 320px;
+}
+
+.slick-dots li button::before{
+  font-size : 50px;
+}
+.article-container{
+  width: 300px;
+  display: flex;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border-radius: 7px;
+  border: solid #c2c2c2 1px;
+  box-shadow: 6px 6px 2px 1px rgba(179, 179, 183, 0.2);
+  color: #333333;
+
+  &__right{
+    width: 200px;
+  }
+
+  &__image{
+
+    &--image{
+      height: 80px;
+      width: 80px;
+      border-radius: 3px; 
+    }
+  }
+
+  &__title{
+    padding: 0 20px;
+    font-weight: bold;
+  }
+
+  &__info{
+    font-size: 12px;
+    margin-top: 35px;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.top-posts{
+  height: 400px;
+  border-bottom: 0.5px #c2c2c2 solid;
+  margin: 0 60px;
+}
+
+.collapsible,.collapsible-header{
+  box-shadow: none;
+  border: none;
+}
+
+.collapsible{
+  height: 100%;
+  padding: none;
+  margin: 0;
+  font-size: 18px;
+}
+
+.collapsible-header{
+  height: 100%;
+  line-height: 78px; 
+  padding: 0;
+  text-align: right;
+}
+
+.collapsible-body{
+  padding: 0;
+}
+
+.collapsible-body ul li{
+  display: inline-block;
+  padding: 0 40px;
+  background-color: rgba(232, 232, 232, 0.674);
+}
+
+.collapsible-body ul li a{
+  color: #333333;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.441);
+  font-size: 25px;
+} 
+
+nav ul li.active {
+  background-color: rgba(0,0,0,0.01);
+  border: none;
+}
+
+.twitter-icon{
+  color: #2680f5; 
+}
+
+.github-icon{
+  color: #333333;
+}
+
+.footer-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: 0.5px #c2c2c2 solid;
+  padding-bottom: 10px;
+  margin: 0 auto 20px auto;
+  width: 95%;
+}
+
+.footer-left{
+  padding-top: 50px;
+  margin-bottom: 50px;
+  width: 60%;
+
+  &__icons{
+    display: flex; 
+    font-size: 40px;
+    padding-left: 30px; 
+    margin-top: -18px;
+
+    &__twitter{
+      padding: 0 10px;
+    }
+
+    &__github{
+      padding:0 10px;
+    }
+  }
+
+  &__content{
+    display: flex;
+  }
+
+  &__profile{
+    padding: 0 30px;
+
+    &__name{
+      font-weight: bold;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+  }
+}
+
+
+.top-products{
+  width: 100%;
+
+  &__image{
+    height: 150px;
+    width: 250px;
+    margin-left: -20px; 
+  }
+}
+
+.carousel{
+  height: 350px;
+  width: 70%;
+}
+
+.carousel .active{
+  height: 300px;
+  width: 300px;
+}
+
+.footer-right{
+  padding-top: 50px;
+  width: 40%;
+  margin-bottom: 50px;
+
+  &__info{
+    padding: 0 30px;
+  }
+}
+@media screen and (min-width: 1000px){
+  .brand-logo{
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+
+  .carousel{
+    width: 100%;
+  }
+
+  .top-posts{
+    height: unset;
+  }
+
+  .products-container{
+    flex-direction: column;
+  }
+
+  .products-text{
+    padding-top: 0;
+  }
+}
+
+
+
+@media screen and (min-width: 750px){
+  .footer-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+}
+
+@media screen and (min-width: 871px){
+  .footer-left__icons{
+    margin-top: -50px;
+  }
+}
+@media screen and (max-width: 750px){
+
+  .header-container__right__category__menu{
+    font-size: 20px;
+  }
+
+  .collapsible-body ul li a{
+    font-size: 20px;
+  } 
+
+  .top-contents-wrapper .top-contents__text-container__title{
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .top-contents-wrapper  .top-contents__text-container__text{
+    font-size: 15px;
+  }
+
+  .collapsible-body ul li {
+    padding: 0 40px;
+    display: block;
+    float: unset;
+  }
+
+  .footer-container{
+    display: block!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+  }
+
+  .footer-right{
+    width: 100%;
+    display: block;
+    padding: 0 40px;
+    padding-top: 50px;
+  }
+
+  .footer-left{
+    width: 100%;
+    display: block;
+    padding: 0 40px;
+    padding-top: 50px;
+
+    &__icons{
+      margin-top: -30px;
+    }
+  }
+
+  .top-posts{
+    border-bottom: unset;
+  }
+
+  .slick-track a{
+    width: 210px;
+  }
+
+  .article-container{
+    width: 200px;
+    &__left{
+      display: none;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1500px){
+
+  .footer-left__content{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  .footer-left__image{
+    margin-right: 30px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .footer-left__icons{
+    padding-left: 100px;
+    margin-top: -80px;
+  }
+
+}
+@media screen and (max-width: 500px){
+
+  .header-container__right__category__menu{
+    font-size: 15px;
+  }
+
+  .collapsible-body ul li a{
+    font-size: 15px;
+  } 
+
+
+  nav .brand-logo,nav .header-container__left{
+    font-size: 25px;
+    text-align: left;
+    left: 35%;
+  }
+
+  .footer-left{
+    position: relative;
+    padding: unset;
+
+    &__content{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__icons{
+      position: absolute;
+      right: 80px;
+      top: 250px; 
+    }
+  }
+
+  .current-article{
+    margin: 0;
+  }
+
+  .footer-right{
+    padding: unset;
+  }
+  
+  .top-contents-wrapper, .top-posts{
+    margin: unset;
+    border-bottom: unset;
+  }
+  
+  .top-products{
+    padding: unset;
+    margin: unset;
+
+    &__title{
+      padding: unset;
+      margin: unset;
+    }
+  }
+
+  .footer-title{
+    padding: unset;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 24px;
+  }
+
+  .products-text{
+    display: none;
+  }
+}
+@media screen and (max-width: 410px){
+
+  .footer-left__icons{
+    position: unset;
+    margin-top: 0px;
+  }
+}
+.profile-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  margin: 15px;
+  border: solid #cecece 5px;
+}
+
+.footer-bottom{
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  border-top: 0.5px #c2c2c2 solid;
+  background-color: rgb(213, 213, 213);
+
+  &__copyright{
+    color: rgb(114, 114, 114); 
+    text-align: center;
+  }
+}
+
+.top-posts{
+  margin-top: 40px;
+}
+
+
