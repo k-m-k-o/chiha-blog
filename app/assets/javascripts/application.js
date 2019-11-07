@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function(){
     dots:true,
     centerMode:true,
     centerPadding:"50px",
+    variableWidth:true,
     focusOnSelect:true
   });
 });

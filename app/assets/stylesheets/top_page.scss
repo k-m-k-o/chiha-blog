@@ -1,6 +1,11 @@
 // Place all the styles related to the top_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container{
+  position: relative;
+  z-index:1;
+}
+
 
 a{
   color: #333333;
@@ -16,6 +21,8 @@ header{
   height: 80px;
   width: 100vw; 
   display: flex;
+  position: relative;
+  z-index: 2;
 }
 
 // 文章挿入aタグ用
@@ -49,7 +56,6 @@ nav .brand-logo{
 }
 
 .header-container{
-  padding: 0 40px;
   width: 100%;
   line-height: 80px;
 
@@ -67,6 +73,8 @@ nav .brand-logo{
       &__menu{
         width: 100%;
         right: 0;
+        padding: 0 15px;
+        font-size: 27px;
       }
     }
   }
@@ -77,8 +85,33 @@ nav{
 }
 
 .top-contents-wrapper{
-  height: 500px;
-  margin: 0 60px;
+  height: 400px;
+  background-image: url("fukuoka.JPG");
+  background-size: cover;
+  background-position: center;
+  &__opacity{
+    background: rgba(255,255,255,0.4);
+    width: 100%;
+    height: 100%;
+  }
+
+  .top-contents__text-container{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'arial black';
+    padding: 120px 40px 0 40px;
+    text-shadow: 1px 1px rgb(186, 186, 186);
+
+    &__title{
+      font-size: 50px;
+      font-weight: bold;
+    }
+    &__text{
+      padding-top: 20px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
 }
 
 .products-container{
@@ -91,6 +124,7 @@ nav{
 
 .current-article{
   margin: 0 60px;
+  margin-top: 40px;
 }
 
 .articles-container{
@@ -98,9 +132,12 @@ nav{
   width: 100%;
 }
 
-.slick-slide{
-  display: inline-block;
-  width:unset;
+.slick-track a{
+  width: 320px;
+}
+
+.slick-dots li button::before{
+  font-size : 50px;
 }
 .article-container{
   width: 300px;
@@ -111,6 +148,7 @@ nav{
   border: solid #c2c2c2 1px;
   box-shadow: 6px 6px 2px 1px rgba(179, 179, 183, 0.2);
   color: #333333;
+
   &__right{
     width: 200px;
   }
@@ -171,15 +209,17 @@ nav{
 .collapsible-body ul li{
   display: inline-block;
   padding: 0 40px;
-  font-size: 18px; 
+  background-color: rgba(232, 232, 232, 0.674);
 }
 
 .collapsible-body ul li a{
   color: #333333;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.441);
+  font-size: 25px;
 } 
 
 nav ul li.active {
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: rgba(0,0,0,0.01);
   border: none;
 }
 
@@ -266,6 +306,11 @@ nav ul li.active {
     padding: 0 30px;
   }
 }
+@media screen and (min-width: 1000px){
+  .brand-logo{
+    margin-left: 40px;
+  }
+}
 
 @media screen and (max-width: 1000px){
 
@@ -294,14 +339,32 @@ nav ul li.active {
     justify-content: space-between;
     padding: 0 40px;
   }
-  
+
 }
+
 @media screen and (min-width: 871px){
   .footer-left__icons{
     margin-top: -50px;
   }
 }
 @media screen and (max-width: 750px){
+
+  .header-container__right__category__menu{
+    font-size: 20px;
+  }
+
+  .collapsible-body ul li a{
+    font-size: 20px;
+  } 
+
+  .top-contents-wrapper .top-contents__text-container__title{
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .top-contents-wrapper  .top-contents__text-container__text{
+    font-size: 15px;
+  }
 
   .collapsible-body ul li {
     padding: 0 40px;
@@ -338,13 +401,19 @@ nav ul li.active {
     border-bottom: unset;
   }
 
+  .slick-track a{
+    width: 210px;
+  }
+
   .article-container{
     width: 200px;
     &__left{
       display: none;
     }
   }
+
 }
+
 @media screen and (min-width: 1500px){
 
   .footer-left__content{
@@ -366,6 +435,15 @@ nav ul li.active {
 
 }
 @media screen and (max-width: 500px){
+
+  .header-container__right__category__menu{
+    font-size: 15px;
+  }
+
+  .collapsible-body ul li a{
+    font-size: 15px;
+  } 
+
 
   nav .brand-logo,nav .header-container__left{
     font-size: 25px;
@@ -449,6 +527,10 @@ nav ul li.active {
     color: rgb(114, 114, 114); 
     text-align: center;
   }
+}
+
+.top-posts{
+  margin-top: 40px;
 }
 
 
