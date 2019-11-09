@@ -70,3 +70,6 @@ gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'redcarpet'
 gem 'coderay'
+
+gem 'devise'
+gem 'dotenv-rails'

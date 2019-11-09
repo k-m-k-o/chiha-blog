@@ -1,0 +1,42 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-header{
+  height: 100px;
+  border-bottom: solid 2px gray;
+  display: flex;
+  justify-content: space-between;
+
+  &__title{
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 40px;
+    line-height: 100px;
+  }
+
+  &__right{
+    padding-left: 40px;
+    line-height: 100px;
+    display: flex;
+
+    & li{
+      padding: 0 40px;
+    }
+  }
+}
+
+.row .col.s6 {
+  width: 100%;
+}
+
+.admin-index{
+
+  &__form{
+    padding: 100px;
+  }
+
+  &__btn{
+    margin-left: 15px;
+  }
+}

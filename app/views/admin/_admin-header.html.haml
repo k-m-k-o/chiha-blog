@@ -1,0 +1,12 @@
+%header.admin-header
+  .admin-header__title Chiha's Blog Admin
+  - if admin_signed_in?
+    %ul.admin-header__right
+      %li
+        = link_to "投稿検索","#"
+      %li
+        = link_to "全投稿","#"
+      %li
+        = link_to "下書き一覧","#"
+      %li
+        = link_to "投稿済み一覧","#"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins,skip: :all
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'top_page#index'
 
@@ -10,5 +11,13 @@ Rails.application.routes.draw do
       get "tech"
       get "others"
     end
+  end
+
+  resources :admin, only: [:index,:create] do
+    collection do 
+      get "sms_confirmation"
+      post "sms_confirmation" => "admin#sms_check"
+    end
+    resources :posts, except: :show
   end
 end

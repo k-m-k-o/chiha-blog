@@ -1,0 +1,16 @@
+.admin-index
+  .admin-index__form.row
+    = form_with url: admin_index_path,method: :post do |f|
+      .input-field.col.s6
+        = f.email_field :email,id: "email"
+        = f.label :email
+      .input-field.col.s6
+        = f.password_field :password,id: "password"
+        = f.label :password
+      .input-field.col.s6
+        = f.password_field :password_confirmation,id: "password_confirmation"
+        = f.label :password_confirmation
+      .input-field.col.s6
+        = f.text_field :phone,id: "phone"
+        = f.label :phone
+      = f.submit "送信",{class: "btn admin-index__btn"}
