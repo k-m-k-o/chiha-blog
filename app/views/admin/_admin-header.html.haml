@@ -1,6 +1,6 @@
 %header.admin-header
   .admin-header__title Chiha's Blog Admin
-  - if admin_signed_in?
+  - if signed_in?
     %ul.admin-header__right
       %li
         = link_to "投稿検索","#"
@@ -10,3 +10,5 @@
         = link_to "下書き一覧","#"
       %li
         = link_to "投稿済み一覧","#"
+      %li
+        = link_to "ログアウト",sign_out_admin_index_path,method: :delete

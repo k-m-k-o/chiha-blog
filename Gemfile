@@ -73,3 +73,4 @@ gem 'coderay'
 
 gem 'devise'
 gem 'dotenv-rails'
+gem 'twilio-ruby'

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     collection do 
       get "sms_confirmation"
       post "sms_confirmation" => "admin#sms_check"
+      delete "sign_out"
     end
     resources :posts, except: :show
   end
