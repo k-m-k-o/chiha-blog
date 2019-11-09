@@ -67,3 +67,6 @@ gem 'jquery-rails'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'redcarpet'
+gem 'coderay'
