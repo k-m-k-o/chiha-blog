@@ -12,12 +12,12 @@
               .collapsible-body
                 %ul
                   %li 
-                    %a All Categories
+                    = link_to "All Categories", all_posts_path
+                  %li
+                    = link_to "Tech", tech_posts_path
                   %li 
-                    %a Tech
+                    = link_to  "Audio", audio_posts_path
                   %li 
-                    %a Audio
+                    = link_to "Fishing", fishing_posts_path
                   %li 
-                    %a Fishing
-                  %li 
-                    %a Others
+                    = link_to "Others", others_posts_path
