@@ -40,3 +40,47 @@
     margin-left: 15px;
   }
 }
+
+.new-post-container{
+  padding: 0 40px;
+}
+.new-post{
+
+  &__title-and-category{
+    width: 50vw;
+
+    &__category{
+      width: 200px;
+    }
+  }
+
+  &__form-and-preview{
+    display: flex;
+    
+  }
+
+  &__left,&__right{
+    display: inline-block;
+    width: 50vw;
+    margin: 0 20px;
+  }
+
+  &__right__preview{
+    height: 90vh;
+    display: inline-block;
+    overflow: scroll;
+  }
+
+  &__bottom-option-and-submit{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.bottom_btn{
+  margin-top: 10px;
+}
+textarea{
+  display: inline-block;
+  height: 90vh;
+  overflow: scroll;
+}

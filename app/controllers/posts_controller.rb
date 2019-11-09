@@ -28,25 +28,22 @@ class PostsController < ApplicationController
 
   def index
     render layout: 'admin'
-
   end
 
   def edit
     render layout: 'admin'
-
   end
 
   def new
     render layout: 'admin'
-
   end
 
   def create
-
+    
   end
 
   def update
-
+    
   end
 
   def destroy

@@ -21,6 +21,7 @@
 $(document).on('turbolinks:load', function(){
   $('.collapsible').collapsible();
   $('.carousel').carousel();
+  $('select').formSelect();
   $('.slick').slick({
     autoplay:true, 
     dots:true,
