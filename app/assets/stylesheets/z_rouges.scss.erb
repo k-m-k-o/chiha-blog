@@ -1,0 +1,55 @@
+<%= Rouge::Themes::Base16.render(:scope => '.highlight') %>
+
+.highlight {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    background: #293437;
+    pre {
+      overflow: auto;
+      word-wrap: normal;
+      white-space: pre;
+      font-size: 0.9em;
+      line-height: 1.5;
+      border-radius: 2px;
+      margin: 0;
+      padding: 15px;
+
+        code {
+            font-size: 1em;
+            table.rouge-table {
+                margin: 0;
+                td.rouge-code {
+                    padding: 0;
+                    vertical-align: top;
+                    pre {
+                        padding: 5px 10px;
+                        line-height: 1.6em;
+                    }
+                }
+                // line number
+                td.rouge-gutter {
+                    text-align: center;
+                    padding: 5px;
+                    width: 20px;
+                    vertical-align: top;
+                    pre {
+                        line-height: 1.6em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.highlight-info {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    .highlight-info__inner {
+        display: inline-block;
+        border-left: 1px solid #ddd;
+        padding: 1px 7px 2px;
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+    }
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_130444) do
+ActiveRecord::Schema.define(version: 2019_11_10_062428) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_130444) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "posted", default: false, null: false
+    t.string "thumb", null: false
     t.index ["admin_id"], name: "index_posts_on_admin_id"
   end
 

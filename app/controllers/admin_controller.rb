@@ -34,8 +34,6 @@ class AdminController < ApplicationController
   end
 
   def sms_check
-    binding.pry
-
     unless session[:email].present? && session[:password].present? && session[:password_confirmation].present? && params[:sms_num].present?
       redirect_to admin_index_path
     end
