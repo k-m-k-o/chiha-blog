@@ -31,13 +31,51 @@
 }
 
 .admin-index{
-
+  padding: 50px 60px;
   &__form{
     padding: 100px;
   }
 
   &__btn{
     margin-left: 15px;
+  }
+
+  &__post{
+    margin: 10px;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+
+    &__right{
+
+      &__title{
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 20px;
+      }
+    }
+    &__content{
+      display: flex;
+      
+    }
+  
+    &__bottom{
+      display: flex;
+  
+      &__category,&__status,&__updated_at{
+        padding: 0 20px;
+      }
+    }
+
+    &__btn{
+      padding: 5px;
+      border-radius: 10px;
+      border: 0.5px solid whitesmoke;
+      background-color: gray;
+      height: 30px;
+      & a{
+        color: rgb(255, 255, 255);
+      }
+    }
   }
 }
 

@@ -3,12 +3,14 @@
   - if signed_in?
     %ul.admin-header__right
       %li
-        = link_to "投稿検索","#"
+        = link_to "新規作成",new_admin_post_path(current_admin)
       %li
-        = link_to "全投稿","#"
+        = link_to "投稿検索",search_admin_posts_path(current_admin)
       %li
-        = link_to "下書き一覧","#"
+        = link_to "全投稿", admin_posts_path(current_admin)
       %li
-        = link_to "投稿済み一覧","#"
+        = link_to "下書き一覧",writing_admin_posts_path(current_admin)
+      %li
+        = link_to "投稿済み一覧", posted_admin_posts_path(current_admin)
       %li
         = link_to "ログアウト",sign_out_admin_index_path,method: :delete

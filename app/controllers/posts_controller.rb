@@ -58,25 +58,64 @@ class PostsController < ApplicationController
         render "posts/new"
       end
     elsif @post.update_attributes(body: params[:body],posted: posted,thumb: params[:thumb])
-      redirect_to admin_posts_path
+      redirect_to admin_posts_path(current_admin)
     else
       render "posts/new"
     end
   end
 
   def update
-    
+    @post = Post.find(params[:id])
+    params[:posted] == "0" ? posted = false : posted = true
+    if @post.present? && params[:thumb].present? && @post.update_attributes(body: params[:body],posted: posted,thumb: params[:thumb],category: params[:category],title: params[:title])
+      redirect_to admin_posts_path(current_admin)
+    elsif @post.present? && @post.update_attributes(body: params[:body],posted: posted,category: params[:category],title: params[:title])
+      redirect_to admin_posts_path(current_admin)
+    else
+      render "posts/edit"
+    end
   end
 
   def destroy
-
+    @post = Post.find(params[:id])
+    if @post && signed_in?
+      @post.delete
+    end
+    redirect_to admin_posts_path(current_admin)
   end
 
+  def autosave
+    if request.xhr?
+        @post = Post.find_by(id: params[:picked_num])
+        if @post
+          @post.update_attributes(body: params[:body],title: params[:title])
+          render partial: 'markdown', locals: {post: @post}
+        else
+          return false
+        end
+    end
+  end
+  
+  def search
+    
+    render layout: 'admin'
+  end
+
+  def writing
+    @posts = Post.where(posted: false).order("updated_at DESC")
+    render layout: 'admin'
+  end
+
+  def posted
+    @posts = Post.where(posted: true).order("updated_at DESC")
+    render layout: 'admin'
+  end
 
   private
 
   def redirect_top_page
     redirect_to root_path unless signed_in?
   end
+
 
 end

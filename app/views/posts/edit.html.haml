@@ -1,5 +1,5 @@
 .new-post-container
-  = form_with url: admin_post_path(current_admin,@post),method: :post do |f|
+  = form_with url: admin_post_path(current_admin,@post),method: :patch do |f|
     .new-post__title-and-category
       .new-post__title-and-category__title.input-field.col.s12
         = f.text_field :title,{value: @post.title}

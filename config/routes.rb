@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get "audio"
       get "tech"
       get "others"
+      post "autosave" 
     end
   end
 
@@ -19,6 +20,12 @@ Rails.application.routes.draw do
       post "sms_confirmation" => "admin#sms_check"
       delete "sign_out"
     end
-    resources :posts, except: :show
+    resources :posts, except: :show do
+      collection do
+        get "writing"
+        get "posted"
+        get "search"
+      end
+    end
   end
 end

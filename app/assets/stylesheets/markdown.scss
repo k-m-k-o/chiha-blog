@@ -1,5 +1,6 @@
 .markdown-container{
-
+  font-size: 16px;
+  font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
   color: #3333333;
 
   h1{
@@ -43,6 +44,8 @@
     font-size: 19px;
   }
 
+  
+
   blockquote {
     margin: 20px 0;
     padding-left: 1.5rem;
@@ -50,6 +53,10 @@
     border-left: 5px solid rgb(194, 194, 194);
     border-left-width: 5px;
     color: rgb(72, 72, 72);
+
+    & p{
+      margin: 20px 0;
+    }
   }
 
   .mi{
@@ -60,5 +67,17 @@
 
   ul {
     list-style-type: decimal
+  }
+  p a{
+    text-decoration-line: underline;
+    color: rgb(95, 159, 255);
+  }
+
+  p{
+    margin: 25px 0;
+  }
+
+  pre{
+    overflow: scroll;
   }
 }

@@ -1,0 +1,23 @@
+.admin-index
+  .admin-index__posts
+    -if @posts.present?
+      - @posts.each do |post|
+        .admin-index__post
+          .admin-index__post__content
+            .admin-index__post__left
+              = image_tag post.thumb.thumb.to_s
+            .admin-index__post__right
+              .admin-index__post__right__title
+                = post.title
+              .admin-index__post__bottom 
+                .admin-index__post__bottom__category
+                  = "Category :  " + post.category
+                .admin-index__post__botto__status
+                  - if post.posted
+                    = "ステータス:  " +  "投稿済み"
+                  - else
+                    = "ステータス:  " + "下書き"
+                .admin-index__post__bottom__updated_at
+                  = post.updated_at
+            .admin-index__post__btn
+              = link_to "編集",edit_admin_post_path(current_admin,post),class: ".admin-index__post__btn__edit"
