@@ -81,3 +81,4 @@ gem "fog-aws"
 gem 'aws-sdk-s3'
 
 gem 'ransack'
+gem 'acts-as-taggable-on'
