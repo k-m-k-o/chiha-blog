@@ -1,7 +1,7 @@
 .admin-index
   .admin-index__posts
     -if @posts.present?
-      - @posts.each do |post|
+      - @posts.each_with_index do |post,i|
         .admin-index__post
           .admin-index__post__content
             .admin-index__post__left
@@ -21,3 +21,11 @@
                   = post.updated_at
             .admin-index__post__btn
               = link_to "編集",edit_admin_post_path(current_admin,post),class: ".admin-index__post__btn__edit"
+            %button.modal-trigger{href: "#modal#{i + 1}"} 削除
+            .modal{id: "modal#{i + 1}"}
+              .modal-content
+                .modal-post-title
+                  = post.title
+                .modal-question 削除しますか？
+              .modal-footer
+                = link_to "削除する",admin_post_path(current_admin,post),method: :delete,class: "modal-close btn-flat"

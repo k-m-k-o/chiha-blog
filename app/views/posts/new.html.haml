@@ -4,6 +4,7 @@
       .new-post__title-and-category__title.input-field.col.s12
         = f.text_field :title
         = f.label :title
+      %textarea.uploadable
       .new-post__title-and-category__category.input-field.col.s12
         = f.select :category,{},{} do
           %option{value: ""} 

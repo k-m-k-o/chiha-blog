@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :assets, only: [:create]
+
   resources :admin, only: [:index,:create] do
     collection do 
       get "sms_confirmation"

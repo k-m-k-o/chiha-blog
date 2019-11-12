@@ -13,6 +13,7 @@
           %option{value: "Others"} Others
         = f.label :category
       = f.file_field :thumb,{value: @post.thumb}
+      %textarea.uploadable{placeholder: "ここに画像をドラッグ&ドロップしてリンクを生成！"}
     .new-post__form-and-preview
       .new-post__left
         = f.label :body

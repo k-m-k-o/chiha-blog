@@ -97,7 +97,8 @@ class PostsController < ApplicationController
   end
   
   def search
-    
+    @search = Post.ransack(params[:q])
+    @posts = @search.result
     render layout: 'admin'
   end
 

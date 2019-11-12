@@ -79,6 +79,18 @@
   }
 }
 
+.uploadable{
+  padding: 0 20px;
+  line-height: 50px;
+  margin: 25px 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 1px rgb(125, 206, 206);
+  background-color: lightcyan;
+  display: inline-block;
+}
+
 .new-post-container{
   padding: 0 40px;
 }
@@ -122,4 +134,19 @@ textarea{
   display: inline-block;
   height: 90vh;
   overflow: scroll;
+}
+
+.modal-trigger{
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid whitesmoke;
+  background-color: gray;
+  height: 30px;
+  margin-left: 15px;
+  color: #ffffff;
+}
+
+.search_container{
+  padding: 60px;
+  margin-top: 10px;
 }
