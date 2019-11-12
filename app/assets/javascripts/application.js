@@ -14,13 +14,17 @@
 //= require jquery
 //= require activestorage
 //= require materialize
-//= require turbolinks
+//= require inline-attachment
+//= require jquery.inline-attachment
 //= require_tree .
 
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $('.collapsible').collapsible();
   $('.carousel').carousel();
+  $('select').formSelect();
+  $('.modal').modal();
+
   $('.slick').slick({
     autoplay:true, 
     dots:true,
@@ -30,3 +34,4 @@ $(document).on('turbolinks:load', function(){
     focusOnSelect:true
   });
 });
+

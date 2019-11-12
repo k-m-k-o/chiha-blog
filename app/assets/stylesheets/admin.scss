@@ -1,0 +1,152 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-header{
+  height: 100px;
+  border-bottom: solid 2px gray;
+  display: flex;
+  justify-content: space-between;
+
+  &__title{
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 40px;
+    line-height: 100px;
+  }
+
+  &__right{
+    padding-left: 40px;
+    line-height: 100px;
+    display: flex;
+
+    & li{
+      padding: 0 40px;
+    }
+  }
+}
+
+.row .col.s6 {
+  width: 100%;
+}
+
+.admin-index{
+  padding: 50px 60px;
+  &__form{
+    padding: 100px;
+  }
+
+  &__btn{
+    margin-left: 15px;
+  }
+
+  &__post{
+    margin: 10px;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+
+    &__right{
+
+      &__title{
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 20px;
+      }
+    }
+    &__content{
+      display: flex;
+      
+    }
+  
+    &__bottom{
+      display: flex;
+  
+      &__category,&__status,&__updated_at{
+        padding: 0 20px;
+      }
+    }
+
+    &__btn{
+      padding: 5px;
+      border-radius: 10px;
+      border: 0.5px solid whitesmoke;
+      background-color: gray;
+      height: 30px;
+      & a{
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+}
+
+.uploadable{
+  padding: 0 20px;
+  line-height: 50px;
+  margin: 25px 0;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 1px rgb(125, 206, 206);
+  background-color: lightcyan;
+  display: inline-block;
+}
+
+.new-post-container{
+  padding: 0 40px;
+}
+.new-post{
+
+  &__title-and-category{
+    width: 50vw;
+
+    &__category{
+      width: 200px;
+    }
+  }
+
+  &__form-and-preview{
+    display: flex;
+    
+  }
+
+  &__left,&__right{
+    display: inline-block;
+    width: 50vw;
+    margin: 0 20px;
+  }
+
+  &__right__preview{
+    height: 90vh;
+    display: inline-block;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  &__bottom-option-and-submit{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.bottom_btn{
+  margin-top: 10px;
+}
+textarea{
+  display: inline-block;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.modal-trigger{
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid whitesmoke;
+  background-color: gray;
+  height: 30px;
+  margin-left: 15px;
+  color: #ffffff;
+}
+
+.search_container{
+  padding: 60px;
+  margin-top: 10px;
+}

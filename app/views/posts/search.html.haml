@@ -1,0 +1,5 @@
+.search_container
+  = search_form_for(@search,url: search_admin_posts_path(current_admin)) do |f| 
+    = f.search_field :title_or_body_or_category_cont,class: "search-form",placeholder: "検索ワードを入力"
+    = f.submit "検索する",class: "btn"
+= render partial: "admin_posts_index",locals: {posts: @posts}

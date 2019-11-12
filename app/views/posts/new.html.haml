@@ -1,0 +1,30 @@
+.new-post-container
+  = form_with url: admin_posts_path(current_admin),method: :post do |f|
+    .new-post__title-and-category
+      .new-post__title-and-category__title.input-field.col.s12
+        = f.text_field :title
+        = f.label :title
+      %textarea.uploadable
+      .new-post__title-and-category__category.input-field.col.s12
+        = f.select :category,{},{} do
+          %option{value: ""} 
+          %option{value: "Tech"} Tech
+          %option{value: "Audio"} Audio
+          %option{value: "Fishing"} Fishing
+          %option{value: "Others"} Others
+        = f.label :category
+      = f.file_field :thumb
+    .new-post__form-and-preview
+      .new-post__left
+        = f.label :body
+        = f.text_area :body,class: "markdown-input"
+      .new-post__right
+        .new-post__right__title Preview
+        .new-post__right__preview
+    .new-post__bottom-option-and-submit
+      .new-post__bottom-option-and-submit__option
+        = f.select :posted,{},{} do
+          %option{value: "0"} 下書き
+          %option{value: "1"} 投稿
+        = f.label :posted
+      = f.submit "送信",class: "btn bottom_btn"
