@@ -2,36 +2,20 @@
 .current-article
   .title-option Current Articles
   .articles-container.slick
-    = link_to "#" do
-      .article-container
-        .article-container__left
-          .article-container__image 
-            = image_tag "profile.jpg",class: "article-container__image--image"
-        .article-container__right
-          .article-container__title サンプルサンプルサンプルサンプルサンプルサンプルサンプル
-          .article-container__info
-            .article-container__date 2019/10/31
-            .article-container__category tech
-    = link_to "#" do
-      .article-container
-        .article-container__left
-          .article-container__image 
-            = image_tag "profile.jpg",class: "article-container__image--image"
-        .article-container__right
-          .article-container__title なんか適当なタイトルその２
-          .article-container__info
-            .article-container__date 2019/10/31
-            .article-container__category tech
-    = link_to "#" do
-      .article-container
-        .article-container__left
-          .article-container__image 
-            = image_tag "profile.jpg",class: "article-container__image--image"
-        .article-container__right
-          .article-container__title なんか適当なタイトルその３
-          .article-container__info
-            .article-container__date 2019/10/31
-            .article-container__category tech
+    - @new_posts.each do |post|
+      = link_to post_path(post) do
+        .article-container
+          .article-container__left
+            .article-container__image 
+              = image_tag post.thumb.thumb.to_s,class: "article-container__image--image"
+          .article-container__right
+            .article-container__title 
+              = post.title
+            .article-container__info
+              .article-container__date 
+                = post.updated_at.strftime("%Y-%m-%d %H:%M")
+              .article-container__category 
+                = post.category
 .top-posts 
   .title-option Application
   .products-container

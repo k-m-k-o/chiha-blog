@@ -1,10 +1,9 @@
 .new-post-container
-  = form_with url: admin_posts_path(current_admin),method: :post do |f|
+  = form_with(model: @post, url: admin_posts_path(current_admin),method: :post,local: "true") do |f|
     .new-post__title-and-category
       .new-post__title-and-category__title.input-field.col.s12
         = f.text_field :title
         = f.label :title
-      %textarea.uploadable
       .new-post__title-and-category__category.input-field.col.s12
         = f.select :category,{},{} do
           %option{value: ""} 
@@ -14,6 +13,11 @@
           %option{value: "Others"} Others
         = f.label :category
       = f.file_field :thumb
+      %textarea.uploadable{placeholder: "ここに画像をドラッグ&ドロップしてリンクを生成！"}
+      = fields_for(@tag) do |form|
+        .new-post__title-and-category__tag.input-field.col.s12
+          = form.text_field :name,{placeholder: "コンマ区切りでタグを入力！"}
+          = form.label "タグ"
     .new-post__form-and-preview
       .new-post__left
         = f.label :body

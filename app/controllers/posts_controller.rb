@@ -5,23 +5,23 @@ class PostsController < ApplicationController
   end
 
   def all
-
+    @posts = Post.all.includes(:admin).order("updated_at DESC")
   end
 
   def fishing
-
+    @posts = Post.where(category: "Fishing",posted: true).order("updated_at DESC")
   end
 
   def audio
-
+    @posts = Post.where(category: "Audio",posted: true).order("updated_at DESC")
   end
 
   def tech
-
+    @posts = Post.where(category: "Tech",posted: true).order("updated_at DESC")
   end
 
   def others
-    
+    @posts = Post.where(category: "Others",posted: true).order("updated_at DESC")
   end
 
   #以下admin用
@@ -42,22 +42,29 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.find_or_initialize_by(title: params[:title],category: params[:category])
-    params[:posted] == "0" ? posted = false : posted = true
+    @post = Post.find_or_initialize_by(title: post_params[:title],category: post_params[:category])
+    post_params[:posted] == "0" ? posted = false : posted = true
     if @post.new_record?
       @post = current_admin.posts.new(
-        thumb: params[:thumb],
-        body: params[:body],
-        title: params[:title],
+        thumb: post_params[:thumb],
+        body: post_params[:body],
+        title: post_params[:title],
         posted: posted, 
-        category: params[:category]
+        category: post_params[:category]
       )
       if @post.save
+        tag_arr = params[:name].split(",")
+        binding.pry
+        tag_arr.each do |name|
+          new_tag = Tag.find_or_initialize_by(name: name)
+          new_tag.save if new_tag.new_record?
+          tag_post = PostTag.find_or_create_by(post_id: @post.id,tag_id: new_tag.id)
+        end
         redirect_to admin_posts_path
       else
         render "posts/new"
       end
-    elsif @post.update_attributes(body: params[:body],posted: posted,thumb: params[:thumb])
+    elsif @post.update_attributes(body: post_params[:body],posted: posted,thumb: post_params[:thumb])
       redirect_to admin_posts_path(current_admin)
     else
       render "posts/new"
@@ -66,10 +73,27 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    params[:posted] == "0" ? posted = false : posted = true
-    if @post.present? && params[:thumb].present? && @post.update_attributes(body: params[:body],posted: posted,thumb: params[:thumb],category: params[:category],title: params[:title])
+
+    post_params[:posted] == "0" ? posted = false : posted = true
+    if @post.present? && post_params[:thumb].present? && @post.update_attributes(body: post_params[:body],posted: posted,thumb: post_params[:thumb],category: post_params[:category],title: post_params[:title])
+      if params[:name].present?
+        tag_arr = params[:name].split(",")
+        tag_arr.each do |name|
+          new_tag = Tag.find_or_initialize_by(name: name)
+          new_tag.save if new_tag.new_record?
+          tag_post = PostTag.find_or_create_by(post_id: @post.id,tag_id: new_tag.id)
+        end
+      end
       redirect_to admin_posts_path(current_admin)
-    elsif @post.present? && @post.update_attributes(body: params[:body],posted: posted,category: params[:category],title: params[:title])
+    elsif @post.present? && @post.update_attributes(body: post_params[:body],posted: posted,category: post_params[:category],title: post_params[:title])
+      if params[:name].present?
+        tag_arr = params[:name].split(",")
+        tag_arr.each do |name|
+          new_tag = Tag.find_or_initialize_by(name: name)
+          new_tag.save if new_tag.new_record?
+          tag_post = PostTag.find_or_create_by(post_id: @post.id,tag_id: new_tag.id)
+        end
+      end
       redirect_to admin_posts_path(current_admin)
     else
       render "posts/edit"
@@ -86,9 +110,9 @@ class PostsController < ApplicationController
 
   def autosave
     if request.xhr?
-        @post = Post.find_by(id: params[:picked_num])
+        @post = Post.find_by(id: post_params[:category])
         if @post
-          @post.update_attributes(body: params[:body],title: params[:title])
+          @post.update_attributes(body: post_params[:body],title: post_params[:title])
           render partial: 'markdown', locals: {post: @post}
         else
           return false
@@ -118,5 +142,8 @@ class PostsController < ApplicationController
     redirect_to root_path unless signed_in?
   end
 
+  def post_params
+    params.require(:post).permit(:title,:posted,:body,:thumb,:category)
+  end
 
 end

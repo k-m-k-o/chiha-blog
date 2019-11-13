@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -81,4 +81,3 @@ gem "fog-aws"
 gem 'aws-sdk-s3'
 
 gem 'ransack'
-gem 'acts-as-taggable-on'
