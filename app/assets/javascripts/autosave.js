@@ -5,8 +5,8 @@ $(document).ready(function(){
     setTimeout(function(){
       stack.pop();
       if (stack.length == 0){
-        var body = $("#body").val();
-        var title = $("#title").val();
+        var body = $("#post_body").val();
+        var title = $("#post_title").val();
         var url = location.href
         var matching_template = /\/posts\/[0-9]+\//;
         var picup_num_template = /[0-9]+/
@@ -18,14 +18,15 @@ $(document).ready(function(){
             type: "post",
             url: "/posts/autosave",
             data: {
+              post: {
               title: title,
               body: body,
-              picked_num: picked_num
-            },
+              category: picked_num
+            }},
             beforeSend: function(xhr) {
               xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
             }
-          })
+        })
           .done(function(data){
             $(".new-post__right__preview").html(data);
             $(".markdown-container").animate({scrollTop: $(".markdown-container")[0].scrollHeight},"fast");

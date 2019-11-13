@@ -1,5 +1,5 @@
 .new-post-container
-  = form_with url: admin_post_path(current_admin,@post),method: :patch do |f|
+  = form_with model: @post,url: admin_post_path(current_admin,@post),method: :patch,local: "true" do |f|
     .new-post__title-and-category
       .new-post__title-and-category__title.input-field.col.s12
         = f.text_field :title,{value: @post.title}
@@ -14,6 +14,10 @@
         = f.label :category
       = f.file_field :thumb,{value: @post.thumb}
       %textarea.uploadable{placeholder: "ここに画像をドラッグ&ドロップしてリンクを生成！"}
+      = fields_for(@tag) do |form|
+        .new-post__title-and-category__tag.input-field.col.s12
+          = form.text_field :name,{placeholder: "コンマ区切りでタグを入力！"}
+          = form.label "タグ"
     .new-post__form-and-preview
       .new-post__left
         = f.label :body
