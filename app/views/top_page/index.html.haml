@@ -22,12 +22,19 @@
     .carousel
       %a.carousel-item
         .top-products
+          = image_tag "blog.png",class: "top-products__image"
+          .top-products__title 
+            「Chiha's Blog」
+            %br
+            当ブログサイト
+      %a.carousel-item{href: "https://fishing-records.herokuapp.com/"}
+        .top-products
           = image_tag "fr.png",class: "top-products__image"
           .top-products__title 
             「FishingRecords」
             %br
             釣り情報投稿、検索アプリ
-      %a.carousel-item
+      %a.carousel-item{href: "http://3.113.199.33/"}
         .top-products
           = image_tag "cs.png",class: "top-products__image"
           .top-products__title
@@ -43,6 +50,11 @@
             フリマアプリのクローン
     .products-text
       %p.products-tect__body
+        「Chiha's Blog」
+        %br
+        当ブログ。マークダウンによる記事の作成、投稿、表示機能、アクセスカウント機能・タグ機能を実装。
+        %br
+        %br
         「FishingRecords」
         %br
         魚釣りの釣果・釣り場の投稿、検索、ユーザー登録ができる釣り情報共有サイト。
