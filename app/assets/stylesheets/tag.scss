@@ -1,0 +1,34 @@
+// Place all the styles related to the tag controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tag_container{
+    background-color: #eee;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 2px;
+    display: inline-block;
+}
+.all_tags_container{
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 750px){
+  .all_tags_container{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .all_tags_container{
+    width: 80%;
+  }
+}

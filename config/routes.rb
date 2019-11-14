@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tags,only: [:index,:show]
+
   resources :assets, only: [:create]
 
   resources :admin, only: [:index,:create] do

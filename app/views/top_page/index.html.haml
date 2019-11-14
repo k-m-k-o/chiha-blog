@@ -10,7 +10,7 @@
               = image_tag post.thumb.thumb.to_s,class: "article-container__image--image"
           .article-container__right
             .article-container__title 
-              = post.title
+              = post.title.truncate(35)
             .article-container__info
               .article-container__date 
                 = post.updated_at.strftime("%Y-%m-%d %H:%M")

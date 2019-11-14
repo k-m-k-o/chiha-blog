@@ -1,0 +1,15 @@
+.popular-content-title Popular Posts
+- @popular_posts.each do |post|
+  = link_to post_path(post) do
+    .popular-content
+      .popular-content__left
+        .popular-content__image 
+          = image_tag post.thumb.thumb.to_s,class: "category-content__image--image"
+      .popular-content__right
+        .popular-content__title 
+          = post.title.truncate(20)
+        .popular-content__info
+          .popular-content__date 
+            = post.updated_at.strftime("%Y/%m/%d")
+          .popular-content__category
+            = post.category

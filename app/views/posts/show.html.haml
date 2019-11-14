@@ -1,0 +1,25 @@
+- content_for(:html_title) {@post.title}
+.post-show-wrapper
+  .post-show__item-container
+    .post-show__main-container
+      .post-show__main-container__header
+        .post-show__main-container__header__title
+          = @post.title
+        .post-show__main-container__header__infomation-contents
+          %a.twitter-share-button{"data-lang" => "ja", "data-show-count" => "false", "data-via" => "chiha66337409", :href => "https://twitter.com/share?ref_src=twsrc%5Etfw"} ツイート
+          .post-show__main-container__header__infomation-contents__category
+            = "カテゴリ: " +  @post.category
+          .post-show__main-container__header__infomation-contents__updated
+            = @post.updated_at.strftime("%Y/%m/%d")
+          .post-show__main-container__header__infomation-contents__access
+            = "Preview: " + @post.impressionist_count.to_s
+        .post-show__main-container__header__tags
+          = render @tags
+      .post-show__main-container__body
+        = image_tag @post.thumb.to_s,class: "post-show__main-container__body__image"
+        = render partial: "markdown",locals: {post: @post}
+      .post-show__main-container__footer
+        %a.twitter-share-button{"data-lang" => "ja", "data-show-count" => "false", "data-via" => "chiha66337409", :href => "https://twitter.com/share?ref_src=twsrc%5Etfw"} ツイート
+    .post-show__sub-container
+      = render partial: "popular_posts",loals: {popular_posts: @popular_posts}
+

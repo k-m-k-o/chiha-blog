@@ -1,7 +1,7 @@
 .markdown-container{
   font-size: 16px;
   font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
-  color: #3333333;
+  color: #333333;
 
   h1{
     font-weight: bold;
@@ -66,7 +66,8 @@
   }
 
   ul {
-    list-style-type: decimal
+    list-style-type: decimal;
+    margin:25px 0;
   }
   p a{
     text-decoration-line: underline;

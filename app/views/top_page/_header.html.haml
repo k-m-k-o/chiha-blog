@@ -4,6 +4,8 @@
       %a.header-container__left.brand-logo{href: "/"} Chiha's Blog
       %ul.nav-mobile.header-container__right
         %li
+          = link_to "Tags",tags_path,class: "header-container__right__tags"
+        %li
           %ul.header-container__right__category.collapsible
             %li
               .collapsible-header 
@@ -21,3 +23,4 @@
                     = link_to "Fishing", fishing_posts_path
                   %li 
                     = link_to "Others", others_posts_path
+

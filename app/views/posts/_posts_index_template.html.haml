@@ -13,6 +13,7 @@
               = post.title
             .category-content__info
               .category-content__date 
-                = post.updated_at.strftime("%Y-%m-%d %H:%M")
+                = post.updated_at.strftime("%Y/%m/%d")
               .category-content__category
                 = post.category
+    = paginate posts

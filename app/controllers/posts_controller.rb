@@ -1,33 +1,43 @@
 class PostsController < ApplicationController 
   before_action :redirect_top_page,except: [:show,:all, :fishing, :audio, :tech, :others]
-  def show
+  impressionist actions: [:show]
 
+  def show
+    @post = Post.find(params[:id])
+    if !@post.posted
+      redirect_to root_path
+      return false
+    end
+    @tags = @post.tags
+    impressionist(@post, nil, unique: [:session_hash])
+    all_posted_posts = Post.where(posted: true).includes(:admin).sort{|a,b| b.impressionist_count <=> a.impressionist_count}
+    @popular_posts = all_posted_posts[0..4]
   end
 
   def all
-    @posts = Post.all.includes(:admin).order("updated_at DESC")
+    @posts = Post.where(posted: true).includes(:admin).order("updated_at DESC").page(params[:page]).per(15)
   end
 
   def fishing
-    @posts = Post.where(category: "Fishing",posted: true).order("updated_at DESC")
+    @posts = Post.where(category: "Fishing",posted: true).order("updated_at DESC").page(params[:page]).per(15)
   end
 
   def audio
-    @posts = Post.where(category: "Audio",posted: true).order("updated_at DESC")
+    @posts = Post.where(category: "Audio",posted: true).order("updated_at DESC").page(params[:page]).per(15)
   end
 
   def tech
-    @posts = Post.where(category: "Tech",posted: true).order("updated_at DESC")
+    @posts = Post.where(category: "Tech",posted: true).order("updated_at DESC").page(params[:page]).per(15)
   end
 
   def others
-    @posts = Post.where(category: "Others",posted: true).order("updated_at DESC")
+    @posts = Post.where(category: "Others",posted: true).order("updated_at DESC").page(params[:page]).per(15)
   end
 
   #以下admin用
 
   def index
-    @posts = Post.all.order("updated_at DESC")
+    @posts = Post.all.order("updated_at DESC").page(params[:page])
     render layout: 'admin'
   end
 
@@ -54,7 +64,6 @@ class PostsController < ApplicationController
       )
       if @post.save
         tag_arr = params[:name].split(",")
-        binding.pry
         tag_arr.each do |name|
           new_tag = Tag.find_or_initialize_by(name: name)
           new_tag.save if new_tag.new_record?
@@ -127,12 +136,12 @@ class PostsController < ApplicationController
   end
 
   def writing
-    @posts = Post.where(posted: false).order("updated_at DESC")
+    @posts = Post.where(posted: false).order("updated_at DESC").page(params[:page]).per(15)
     render layout: 'admin'
   end
 
   def posted
-    @posts = Post.where(posted: true).order("updated_at DESC")
+    @posts = Post.where(posted: true).order("updated_at DESC").page(params[:page]).per(15)
     render layout: 'admin'
   end
 
