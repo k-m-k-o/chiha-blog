@@ -1,0 +1,6 @@
+- content_for(:html_title) { 'Tags' }
+= render partial: 'top_page/image-wrapper'
+.category-container 
+  .category__title.title-option All Tags
+  .all_tags_container
+    = render @tags

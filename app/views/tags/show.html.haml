@@ -1,0 +1,3 @@
+- content_for(:html_title) { @tag.name}
+= render partial: 'top_page/image-wrapper'
+= render partial: 'posts/posts_index_template', locals: {category_title: @tag.name,posts: @posts}

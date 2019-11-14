@@ -46,11 +46,12 @@
     border-bottom: 1px solid gray;
 
     &__right{
-
+      max-width: 600px;
       &__title{
         font-size: 20px;
         font-weight: bold;
         padding: 0 20px;
+        word-break: break-all;
       }
     }
     &__content{

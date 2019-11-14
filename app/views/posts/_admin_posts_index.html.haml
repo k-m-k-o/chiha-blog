@@ -1,7 +1,7 @@
 .admin-index
   .admin-index__posts
-    -if @posts.present?
-      - @posts.each_with_index do |post,i|
+    -if posts.present?
+      - posts.each_with_index do |post,i|
         .admin-index__post
           .admin-index__post__content
             .admin-index__post__left
@@ -29,3 +29,4 @@
                 .modal-question 削除しますか？
               .modal-footer
                 = link_to "削除する",admin_post_path(current_admin,post),method: :delete,class: "modal-close btn-flat"
+      = paginate posts
