@@ -84,3 +84,8 @@ gem 'ransack'
 gem 'impressionist'
 
 gem 'kaminari'
+
+group :production do
+  gem 'pg'
+end
+
