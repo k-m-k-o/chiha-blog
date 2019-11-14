@@ -52,3 +52,6 @@ production:
   database: chiha-blog_production
   username: chiha-blog
   password: <%= ENV['CHIHA-BLOG_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
