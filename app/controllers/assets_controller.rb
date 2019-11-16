@@ -11,7 +11,7 @@ class AssetsController < ApplicationController
       render json: { error: "file type (#{asset.file.content_type}) is not allowed" }, status: 500 and return
     end
 
-    asset.save
+    asset.upload
     render json: { filename: asset.url }
   end
 
