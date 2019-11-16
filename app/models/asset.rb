@@ -15,7 +15,8 @@ class Asset
   end
 
   private
+
   def s3
-    @s3 ||= Aws::S3::Resource.new
+    @s3 ||= Aws::S3::Resource.new(region: "ap-northeast-1")
   end
 end
